@@ -1,0 +1,28 @@
+{
+    "name": "yanz/chartron",
+    "description": "Advanced charts for laravel",
+    "type": "chartron",
+    "autoload": {
+        "psr-4": {
+            "Yanz\\Chartron\\": "src/"
+        }
+    },
+    "authors": [
+        {
+          "name": "James Yan",
+          "email": "jamesyancassiomacedo@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^3.8"
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Yanz\\Chartron"
+          ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
