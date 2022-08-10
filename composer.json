@@ -1,6 +1,6 @@
 {
     "name": "yanz/chartron",
-    "description": "Advanced charts for laravel",
+    "description": "Advanced charts package for laravel",
     "type": "chartron",
     "autoload": {
         "psr-4": {
