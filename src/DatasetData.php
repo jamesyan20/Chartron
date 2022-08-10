@@ -1,11 +1,11 @@
 <?php
 
 declare(strict_types = 1);
-namespace Chartron\PHP;
+namespace Chartron\APP;
 
 class DatasetData
 {
     public array $datasets = [];
-    public string $labels;
+    public array $labels;
     
 }

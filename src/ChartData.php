@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types = 1);
-namespace Chartron\PHP;
+namespace Chartron\APP;
 
 class ChartData
 {

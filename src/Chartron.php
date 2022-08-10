@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types = 1);
-namespace Chartron\PHP;
+namespace Chartron\APP;
 
 class Chartron
 {
@@ -19,6 +19,7 @@ class Chartron
 
     public function labels(array $labels){  
         $this->datasetData->labels = $labels;
+        return $this;
     }
 
     public function dataset(string $label,array $values){  
@@ -40,8 +41,10 @@ class Chartron
 
     public function keep()
     {   
-        dd($this->datasetData);
-        return ;
+        $d = (array) $this->datasetData;
+        $t = json_decode(json_encode($this),true);
+
+        return array_merge($d,$t);
     }
 
     protected function getDataset(string $label): ? Chartron
