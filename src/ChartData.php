@@ -11,12 +11,14 @@ class ChartData
      * @var string
      */
     public string $label;
-    public array $values;
+    public array $data;
+    public array $options;
 
-    public function __construct(string $label, array $values)
+    public function __construct(string $label, array $data,array $options)
     {
         $this->label = $label;
-        $this->values = $values;
+        $this->data = $data;
+        $this->options = $options;
     }
 }
 

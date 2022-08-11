@@ -22,19 +22,20 @@ class Chartron
         return $this;
     }
 
-    public function dataset(string $label,array $values){  
+    public function dataset(string $label,array $data,array $options = []){  
         
-        return $this->advancedDataset($label,$values);
+        return $this->advancedDataset($label,$data,$options);
     }
 
-    public function advancedDataset(string $label, array $values): Chartron
+    public function advancedDataset(string $label, array $data,array $options): Chartron
     {
         $dataset = $this->getDataset($label);
         if ($dataset) {
             $dataset->label = $label;
-            $dataset->values = $values;
+            $dataset->data = $data;
+            $dataset->options = $options;
         } else {
-            $this->datasetData->datasets[] = new ChartData($label, $values);
+            $this->datasetData->datasets[] = new ChartData($label, $data,$options);
         }
         return $this;
     }
