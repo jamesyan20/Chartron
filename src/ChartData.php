@@ -12,13 +12,13 @@ class ChartData
      */
     public string $label;
     public array $data;
-    public array $options;
+    // public array $options;
 
     public function __construct(string $label, array $data,array $options)
     {
         $this->label = $label;
         $this->data = $data;
-        $this->options = $options;
+        if(!empty($options)) foreach($options as $key => $option) $this->{$key} = $option;
     }
 }
 
