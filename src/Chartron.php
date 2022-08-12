@@ -17,6 +17,43 @@ class Chartron
         return new Chartron(new DatasetData);
     }
 
+
+    public function semester(string $lang = "BR"){
+        $month = date('m');
+        switch($lang){
+            case "EN":
+                $meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                break;
+            case "BR":
+                $meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+                break;
+            default:
+                $meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+                break;
+        }
+        for($i=1;$i<=6;$i++) $lab[] = $meses[(int)date('m', strtotime('first day of ' . -$i . 'month'))];
+        $this->datasetData->labels = $lab;
+        return $this;
+    }
+
+    public function monthLabels(string $lang = "BR"){  
+
+        switch($lang){
+            case "EN":
+                $meses = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                break;
+            case "BR":
+                $meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+                break;
+            default:
+                $meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+                break;
+        }
+        
+        $this->datasetData->labels = $meses;
+        return $this;
+    }
+
     public function labels(array $labels){  
         $this->datasetData->labels = $labels;
         return $this;
